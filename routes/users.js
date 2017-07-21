@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
   router.post('/', function(req, res, next) {
   var query = {req}
   db.bind('users');
-   db.users.insert(query).toArray(function(err, item){ 
+   db.users.insert(query,{_id: 0}).toArray(function(err, item){ 
      console.log(item)
   //res.render('users', {users:item, title:"Users Table"} )
     res.json({users: item})
